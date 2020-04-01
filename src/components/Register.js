@@ -21,10 +21,10 @@ function Register({ registerUser, isLoading, error }) {
 
   const layout = {
     labelCol: {
-      span: 8
+      span: 9
     },
     wrapperCol: {
-      span: 10
+      span: 8
     }
   };
 
@@ -50,7 +50,7 @@ function Register({ registerUser, isLoading, error }) {
         onFinish={onFinish}
         validateMessages={validateMessages}
       >
-        <Col span={12} offset={8}>
+        <Col span={12} offset={9}>
           <h1>Regsiter New Account</h1>
         </Col>
 
@@ -112,11 +112,11 @@ function Register({ registerUser, isLoading, error }) {
         >
           <DatePicker defaultValue={moment(moment())} />
         </Form.Item>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 9 }}>
           <Button loading={isLoading} className="subBtn" htmlType="submit">
             Submit
           </Button>
-          {/* {isLoading ? <Spinner /> : null} */}
+          {isLoading ? <Spinner /> : null}
         </Form.Item>
       </Form>
     </>

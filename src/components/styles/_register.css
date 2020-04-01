@@ -1,0 +1,41 @@
+.ant-btn {
+  background-color: #61a04e;
+  color: white;
+}
+
+.ant-btn:hover {
+  background-color: #91c980;
+  color: white;
+}
+.ant-btn:active {
+  background-color: #61a04e;
+  color: white;
+}
+
+.ant-btn:visited {
+  background-color: #61a04e;
+  color: white;
+}
+
+.ant-form {
+  margin-top: 17%;
+}
+.ant-btn:focus {
+  background-color: #61a04e !important;
+  color: white !important;
+}
+ant-btn:hover,
+.ant-btn:focus {
+  color: #adcdff;
+  background-color: #61a04e !important;
+  border-color: #61a04e !important;
+}
+
+.ant-spin-dot {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#header {
+  margin-left: 200px;
+}

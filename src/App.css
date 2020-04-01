@@ -15,17 +15,18 @@
 }
 
 .label {
-  color: white;
-  margin-top: 2.5%;
+  color: rgb(244, 244, 245);
+  margin-top: 3.5%;
 }
 #ant-input {
-  margin: 2%;
+  margin: 2.5%;
   background-color: rgb(244, 244, 245);
+  height:5vh
 }
 
 #header {
   background-color: rgb(128, 169, 248);
-  padding: 1%;
+  padding: 0.6%;
   display: flex;
   justify-content: space-between;
   width:100%;
@@ -34,7 +35,7 @@
 
 #btn {
   background: rgb(69, 128, 245);
-  margin-top: 2%;
+  margin-top: 2.3%;
 }
 
 /* #myForm{

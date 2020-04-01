@@ -33,26 +33,29 @@ import { Layout, Input, Button } from 'antd'
                   <h2 className="title"> Profilebook</h2>   
                 </div>
                 
-               
+                <div className="input-parent">
                     <label className="label" htmlFor="Email">Email</label>
-                    <Input id ="ant-input"
+                    <Input id ="ant-input" 
+                    size ="small"
                     type = "email"
                     name = "User_Email"
-                     placeholder = "Email"
+                    placeholder = "Email"
                     value = {creds.Email}
                     onChange = {handleChanges}                 
                     />
 
-                   <label className="label" htmlFor="Password">Password</label>
+                   <label className="label"  
+                    htmlFor="Password">Password</label>
                     <Input id ="ant-input"
+                    size ="small"
                     type = "password"
                     name = "User_Password"
-                     placeholder = "Password"
+                    placeholder = "Password"
                     value = {creds.Password}
                     onChange = {handleChanges}                 
                     />
                     <Button id="btn" type = 'primary' form="myForm" key="submit" htmlType="submit">Log In</Button>
-               
+                </div>
              </div>
       
 

@@ -3,6 +3,7 @@ import './App.css';
 import DefaultHome from "./components/DefaultHome"
 import Test from "./components/Test"
 import Banner from "./components/header"
+import PbFooter from "./components/Footer"
 
 
 import { Route } from "react-router-dom";
@@ -24,7 +25,10 @@ function App() {
         <Banner />
       </Route>
 
-
+      <Route path = "/footer">
+        <PbFooter />
+      </Route>
+      
     </div>
   );
 }

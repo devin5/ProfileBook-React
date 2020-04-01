@@ -1,39 +1,37 @@
 /* @import '~antd/dist/antd.css' */
 
-.bDiv {
+/* .bDiv {
   width: 10%;
   margin: 0 auto;
+} */
+
+.title {
+  color: rgb(244, 244, 245);
+  font-size: 2rem;
+  /* margin:auto auto; */
+}
+.input-parent {
+  display: flex;
 }
 
-.title{
-  color:rgb(244, 244, 245);
-  font-size:2rem;
-  margin:auto auto;
+.label {
+  color: white;
+  margin-top: 2.5%;
 }
-.input-parent{
-  display:flex;
-}
-
-.label{
-  color:white;
-  margin-top:2.5%;
-}
-#ant-input{ 
+#ant-input {
   margin: 2%;
-  background-color:rgb(244, 244, 245);
-  
+  background-color: rgb(244, 244, 245);
 }
 
-#header{
-  background-color:rgb(128,169,248);
-  padding:1%;
-  display:flex;
+#header {
+  background-color: rgb(128, 169, 248);
+  padding: 1%;
+  display: flex;
   justify-content: space-between;
-  width:100%
+  /* width: 100%; */
 }
 
-#btn{
+#btn {
   background: rgb(69, 128, 245);
-  margin-top:2%;
- 
+  margin-top: 2%;
 }

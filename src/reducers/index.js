@@ -8,10 +8,15 @@ import {
   //   Sign In User
   SIGN_USER_START,
   SIGN_USER_SUCCESS,
-  SIGN_USER_FAILURE
+  SIGN_USER_FAILURE,
+
+  GET_All_POST_START,
+  GET_All_POST_SUCCESS,
+  GET_All_POST_FAILURE
 } from "../actions";
 
 const initialState = {
+  posts: [],
   user: {},
   isLoading: false,
   error: null
@@ -58,6 +63,25 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
         isLoading: false
       };
+      case GET_All_POST_START:
+        return {
+          ...state,
+          error: null,
+          isLoading: true
+        };
+      case GET_All_POST_SUCCESS:
+        return {
+          ...state,
+          posts: action.payload,
+          isLoading: false,
+          error: null
+        };
+      case GET_All_POST_FAILURE:
+        return {
+          ...state,
+          error: action.payload,
+          isLoading: false
+        };
     default:
       return state;
   }

@@ -3,6 +3,7 @@ import './App.css';
 import DefaultHome from "./components/DefaultHome"
 import Test from "./components/Test"
 import Post from "./components/Post"
+import TimeLine from "./components/TimeLine"
 
 
 import { Route } from "react-router-dom";
@@ -14,6 +15,7 @@ function App() {
     
        <Route exact path="/">
         <Test />
+        <TimeLine/>
       </Route>     
      
 

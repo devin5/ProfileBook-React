@@ -1,4 +1,4 @@
-import React, { createElement, useState } from "react";
+import React, { createElement, useState, useEffect} from "react";
 import { Comment, Tooltip, Avatar } from "antd";
 import moment from "moment";
 import {
@@ -12,6 +12,13 @@ const Post = props => {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [action, setAction] = useState(null);
+  const [like2, setLikes2] = useState([]);
+  const likesUrl = "localhost:5503/profilebook/likes/${}"
+
+  useEffect(()=>{
+
+
+  })
 
   const like = () => {
     setLikes(1);
@@ -47,21 +54,22 @@ const Post = props => {
     </span>,
     <span key="comment-basic-reply-to">Reply to</span>
   ];
+  const firstName = props.data.User_First_Name
+  const lastName = props.data.User_Last_Name
+
 
   return (
     <Comment
       actions={actions}
-      author={<a>Han Solo</a>}
+      author={<a>{firstName} {lastName}</a>}
       content={
         <p>
-          We supply a series of design principles, practical patterns and high
-          quality design resources (Sketch and Axure), to help people create
-          their product prototypes beautifully and efficiently.
+          {props.data.Post_Text}
         </p>
       }
       datetime={
-        <Tooltip title={moment().format("YYYY-MM-DD HH:mm:ss")}>
-          <span>{moment().fromNow()}</span>
+        <Tooltip title={moment(props.data.Post_Created_At).format("YYYY-MM-DD HH:mm:ss")}>
+          <span>{moment(moment(props.data.Post_Created_At)).fromNow()}</span>
         </Tooltip>
       }
     />

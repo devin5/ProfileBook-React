@@ -5,9 +5,9 @@
   margin: 0 auto;
 } */
 
-.title{
-  color:rgb(244, 244, 245);
-  font-size:2rem;
+.title {
+  color: rgb(244, 244, 245);
+  font-size: 2rem;
   /* margin:auto auto; */
 }
 .input-parent {
@@ -15,26 +15,28 @@
 }
 
 .label {
-  color: white;
-  margin-top: 2.5%;
+  color: rgb(244, 244, 245);
+  margin-top: 3.5%;
 }
 #ant-input {
-  margin: 2%;
+  margin: 2.5%;
   background-color: rgb(244, 244, 245);
+  height: 30px;
 }
 
 #header {
   background-color: rgb(128, 169, 248);
-  padding: 1%;
+  padding: 0.9%;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  width:100%;
-  margin-left:0 !important;
+  width: 100%;
+  margin-left: 0 !important;
 }
 
 #btn {
   background: rgb(69, 128, 245);
-  margin-top: 2%;
+  margin-top: 2.3%;
 }
 
 /* #myForm{

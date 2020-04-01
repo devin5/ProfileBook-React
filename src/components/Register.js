@@ -7,13 +7,16 @@ import { connect } from "react-redux";
 import { registerUser } from "../actions/index";
 import Spinner from "./Spinner";
 import { Alert } from "antd";
+import { useHistory } from "react-router-dom";
 
 function Register({ registerUser, isLoading, error }) {
+  const history = useHistory();
+
   const onFinish = values => {
     const obj = { ...values.user };
     obj.User_Birthday = obj.User_Birthday.format("YYYY/MM/DD");
     console.log(obj);
-    registerUser(obj);
+    registerUser(obj, history);
   };
 
   const layout = {
@@ -47,6 +50,10 @@ function Register({ registerUser, isLoading, error }) {
         onFinish={onFinish}
         validateMessages={validateMessages}
       >
+        <Col span={12} offset={8}>
+          <h1>Regsiter New Account</h1>
+        </Col>
+
         <Form.Item
           name={["user", "User_First_Name"]}
           label="First Name"
@@ -58,6 +65,7 @@ function Register({ registerUser, isLoading, error }) {
         >
           <Input />
         </Form.Item>
+
         <Form.Item
           name={["user", "User_Last_Name"]}
           label="Last Name"
@@ -69,6 +77,7 @@ function Register({ registerUser, isLoading, error }) {
         >
           <Input />
         </Form.Item>
+
         <Form.Item
           name={["user", "User_Email"]}
           label="Email"

@@ -35,3 +35,7 @@ ant-btn:hover,
   margin-top: 20px;
   margin-left: 20px;
 }
+
+#header {
+  margin-left: 200px;
+}

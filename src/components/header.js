@@ -8,6 +8,9 @@ const { Search } = Input;
 
 
 const Banner = () =>{
+    function logOut(){
+
+    }
 
 
     return(     
@@ -15,10 +18,10 @@ const Banner = () =>{
                 <Header id ="loginHeader">
                     <div className = "menu-parent">
                         <Menu className ="menu" theme ="" mode="horizontal" defaultSelectedKeys={['']}>
-                            <Menu.Item key="1"><Link className="link" to = "">Profile</Link></Menu.Item>
-                            <Menu.Item key="2"><Link className="link" to = "">Timeline</Link></Menu.Item>  
-                            <Menu.Item key="3"><Link className="link" to = "">Log Out</Link></Menu.Item>                       
-                            <Menu.Item key="4"> <Link className="link" to = "">Test</Link></Menu.Item>   
+                            <Menu.Item key="1"><Link className="link" to = "/defaulthome">Profile</Link></Menu.Item>
+                            <Menu.Item key="2"><Link className="link" to = "/">Timeline</Link></Menu.Item>  
+                            <Menu.Item key="3"><Link className="link" to = "/defaulthome">Log Out</Link></Menu.Item>                       
+                            <Menu.Item key="4"> <Link className="link" to = "/">Test</Link></Menu.Item>   
                         </Menu>
                     </div>
                     <div id = "search">

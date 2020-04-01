@@ -3,7 +3,7 @@ import React, {useState} from "react"
 import {connect} from 'react-redux'
 import {signIn} from '../actions'
 import { Layout, Input, Button } from 'antd'
-const {header} = Layout
+
 
 
 

@@ -26,9 +26,10 @@
 #header {
   background-color: rgb(128, 169, 248);
   padding: 1%;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   /* width: 100%; */
+  margin-left: 0px !important;
 }
 
 #btn {

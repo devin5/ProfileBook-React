@@ -25,15 +25,15 @@ const {header} = Layout
     }
 
     return(
-         <Layout>
+         
              
-         <form id="myForm" onSubmit = {handleSubmit}>
+        
              <div id= "header">
                 <div>
                   <h2 className="title"> Profilebook</h2>   
                 </div>
                 
-                <div className = "input-parent">
+               
                     <label className="label" htmlFor="Email">Email</label>
                     <Input id ="ant-input"
                     type = "email"
@@ -52,11 +52,11 @@ const {header} = Layout
                     onChange = {handleChanges}                 
                     />
                     <Button id="btn" type = 'primary' form="myForm" key="submit" htmlType="submit">Log In</Button>
-                </div>    
+               
              </div>
-         </form>
+      
 
-         </Layout>
+         
          ) 
 }
 

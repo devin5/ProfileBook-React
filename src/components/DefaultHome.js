@@ -6,7 +6,7 @@ export default function DefaultHome(props) {
   return (
     <>
       <Login />
-      <Register />
+      {/* <Register /> */}
     </>
   );
 }

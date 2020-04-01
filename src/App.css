@@ -8,7 +8,7 @@
 .title{
   color:rgb(244, 244, 245);
   font-size:2rem;
-  margin:auto auto;
+  /* margin:auto auto; */
 }
 .input-parent{
   display:flex;
@@ -29,7 +29,8 @@
   padding:1%;
   display:flex;
   justify-content: space-between;
-  width:100%
+  width:100%;
+  margin-left:0 !important;
 }
 
 #btn{
@@ -37,3 +38,7 @@
   margin-top:2%;
  
 }
+
+/* #myForm{
+  width:100%
+} */

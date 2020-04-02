@@ -17,12 +17,12 @@ import { Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+
+<Banner />
      
       
     
       <Route exact path="/">
-        <Test />
-
         <TimeLine/>
       </Route>     
       <Route exact path="/login">
@@ -41,9 +41,9 @@ function App() {
         <Post />
       </Route>
 
-      <Route path="/header">
+      {/* <Route path="/header">
         <Banner />
-      </Route>
+      </Route> */}
 
       <Route path = "/footer">
         <PbFooter />

@@ -1,9 +1,10 @@
-/* @import '~antd/dist/antd.css' */
+
 
 /* .bDiv {
   width: 10%;
   margin: 0 auto;
 } */
+
 
 .title {
   color: rgb(244, 244, 245);
@@ -34,11 +35,3 @@
   margin-left: 0 !important;
 }
 
-#btn {
-  background: rgb(69, 128, 245);
-  margin-top: 2.3%;
-}
-
-/* #myForm{
-  width:100%
-} */

@@ -1,40 +1,46 @@
+/* .layout {
+  min-height: 10px;
+} */
 
-.layout{
-   min-height: 60vh;   
+#search {
+  margin-top: 25px;
+  width: 29%;
+  margin-right: 30px !important;
 }
 
-
-#search{
-    margin-top:1.5%;
-    width:20%;  
+#loginHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(128, 169, 248);
+  padding: 1.2% 0 2% 0;
+  height: 110px;
+}
+.menu-parent:hover {
+  height: 14vh;
 }
 
-#loginHeader{
-    display:flex;
-    justify-content: space-between;
-    background-color:rgb(128, 169, 248);
-    padding: 1.2% 0 2.0% 0;
-    height:13vh;   
-}
-.menu-parent:hover{
-   height:14vh;
+.menu {
+  background-color: rgb(128, 169, 248);
 }
 
-.menu{
-    background-color:rgb(128, 169, 248);   
+.menu a.link {
+  color: white;
 }
 
-.menu a.link{   
-    color:white;  
+.menu a:hover {
+  /* background-color: rgb(69, 128, 245);
+  width: 64px;
+  text-align: center; */
+  color: rgb(105, 119, 197) !important;
+  border-bottom: 1px solid rgb(105, 119, 197);
 }
 
-.menu a:hover{
-    background-color: rgb(69, 128, 245);
-    width:64px; 
-    text-align:center;    
+#logout:hover{
+  color: rgb(236, 17, 17) !important;
+  border-bottom: 1px solid rgb(236, 17, 17);
 }
 
-#link{
-    color:(244, 244, 245); 
-    margin:2%;
+#link {
+  color: (244, 244, 245);
+  margin: 2%;
 }

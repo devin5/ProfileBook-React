@@ -2,8 +2,14 @@ import React from 'react';
 import './App.css';
 import DefaultHome from "./components/DefaultHome"
 import Test from "./components/Test"
+
+import Post from "./components/Post"
+import Login from "./components/Login"
+import TimeLine from "./components/TimeLine"
+
 import Banner from "./components/header"
 import PbFooter from "./components/Footer"
+
 
 
 import { Route } from "react-router-dom";
@@ -11,14 +17,28 @@ import { Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      {/* <Login/> */}
+     
+      
     
       <Route exact path="/">
         <Test />
-      </Route>  
+
+        <TimeLine/>
+      </Route>     
+      <Route exact path="/login">
+       <Login/>
+      </Route>   
+
+  
+
 
       <Route path="/defaulthome">
         <DefaultHome />
+      </Route>
+
+
+      <Route path="/post">
+        <Post />
       </Route>
 
       <Route path="/header">
@@ -29,6 +49,7 @@ function App() {
         <PbFooter />
       </Route>
       
+
     </div>
   );
 }

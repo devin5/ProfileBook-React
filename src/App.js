@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import DefaultHome from "./components/DefaultHome"
 import Test from "./components/Test"
+import Banner from "./components/header"
 
 
 import { Route } from "react-router-dom";
@@ -11,14 +12,19 @@ function App() {
     <div className="App">
       {/* <Login/> */}
     
-       <Route exact path="/">
+      <Route exact path="/">
         <Test />
-      </Route>     
-     
+      </Route>  
 
-     <Route path="/defaulthome">
+      <Route path="/defaulthome">
         <DefaultHome />
       </Route>
+
+      <Route path="/header">
+        <Banner />
+      </Route>
+
+
     </div>
   );
 }

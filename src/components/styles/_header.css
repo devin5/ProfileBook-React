@@ -1,0 +1,40 @@
+
+.layout{
+   min-height: 60vh;   
+}
+
+
+#search{
+    margin-top:1.5%;
+    width:20%;  
+}
+
+#loginHeader{
+    display:flex;
+    justify-content: space-between;
+    background-color:rgb(128, 169, 248);
+    padding: 1.2% 0 2.0% 0;
+    height:13vh;   
+}
+.menu-parent:hover{
+   height:14vh;
+}
+
+.menu{
+    background-color:rgb(128, 169, 248);   
+}
+
+.menu a.link{   
+    color:white;  
+}
+
+.menu a:hover{
+    background-color: rgb(69, 128, 245);
+    width:64px; 
+    text-align:center;    
+}
+
+#link{
+    color:(244, 244, 245); 
+    margin:2%;
+}

@@ -1,32 +1,37 @@
-.title{
-    color:rgb(244, 244, 245);
-    font-size:2rem;   
-  }
-  
-  .input-parent {
-    display: flex;
-  }
-  
-  .label {
-    color: rgb(244, 244, 245);
-    margin-top: 3.5%;
-  }
-  #ant-input {
-    margin: 2.5%;
-    background-color: rgb(244, 244, 245);
-    height:5vh
-  }
-  
-  #header {
-    background-color: rgb(128, 169, 248);
-    padding: 0.6%;
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-    margin-left:0 !important;
-  }
-  
-  #btn {
-    background: rgb(69, 128, 245);
-    margin-top: 2.3%;
-  }
+.title {
+  color: rgb(244, 244, 245);
+  font-size: 2rem;
+  padding: 3%;
+  margin-left: 6%;
+}
+
+.input-parent {
+  margin-top: 0.5%;
+  margin-right: 2%;
+  display: flex;
+}
+
+.label {
+  color: rgb(244, 244, 245);
+  margin-top: 3.5%;
+}
+#ant-input {
+  margin-top: 3%;
+  background-color: rgb(244, 244, 245);
+  height: 3.4vh;
+}
+
+#header {
+  background-color: rgb(128, 169, 248);
+  padding: 0.6%;
+  padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 0 !important;
+}
+
+#btn {
+  background: rgb(69, 128, 245);
+  margin-top: 2.3%;
+}

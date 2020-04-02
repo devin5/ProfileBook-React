@@ -4,11 +4,12 @@ import "./styles/_login.css";
 import {connect} from 'react-redux'
 import {signIn} from '../actions'
 import { Layout, Input, Button } from 'antd'
-
+import {History, useHistory} from "react-router-dom"
 
 
 
    function Login({signIn}) {   
+    const history = useHistory() 
 
    const[creds, setCreds] = useState({})
 
@@ -22,7 +23,7 @@ import { Layout, Input, Button } from 'antd'
     const handleSubmit = (e) => {
         console.log("I am creds",creds)
       e.preventDefault()
-         signIn(creds)
+         signIn(creds, history)
     }
 
     return(
@@ -55,7 +56,7 @@ import { Layout, Input, Button } from 'antd'
                     value = {creds.Password}
                     onChange = {handleChanges}                 
                     />
-                    <Button id="btn" type = 'primary' form="myForm" key="submit" htmlType="submit">Log In</Button>
+                    <Button onClick={handleSubmit} id="btn" type = 'primary' form="myForm" key="submit" htmlType="submit">Log In</Button>
                 </div>
              </div>
       

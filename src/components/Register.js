@@ -40,7 +40,7 @@ function Register({ registerUser, isLoading, error }) {
   };
 
   return (
-    <>
+    <div className="reg">
       {/* {error && console.log("im error", error.response.data.message)} */}
       {error && <Alert message={error.response.data.message} type="error" />}
 
@@ -119,7 +119,7 @@ function Register({ registerUser, isLoading, error }) {
           {isLoading ? <Spinner /> : null}
         </Form.Item>
       </Form>
-    </>
+    </div>
   );
 }
 

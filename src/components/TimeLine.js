@@ -10,11 +10,11 @@ const TimeLine = ({ getTimeLine, posts }) => {
   }, []);
 
   return (
-    <>
+    <div id="wrapper">
       {posts.map(x => (
         <Post data={x}/>
       ))}
-    </>
+    </div>
   );
 };
 const mapStateToProps = state => {

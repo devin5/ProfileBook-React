@@ -36,3 +36,7 @@
   color: rgb(40, 54, 182);
   min-height: 100vh;
 }
+
+.contain {
+  padding: 3%;
+}

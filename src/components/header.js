@@ -20,7 +20,7 @@ const Banner = () => {
             className="menu"
             theme=""
             mode="horizontal"
-            defaultSelectedKeys={[""]}
+            defaultSelectedKeys={[1]}
           >
             <Menu.Item key="1">
               <Link className="link" to="/profilebook/timeline">

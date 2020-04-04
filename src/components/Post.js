@@ -2,6 +2,8 @@ import React, { createElement, useState, useEffect } from "react";
 import { Comment, Tooltip, Avatar } from "antd";
 import moment from "moment";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import { PostComments } from "./PostComments";
+
 import {
   DislikeOutlined,
   LikeOutlined,
@@ -14,6 +16,7 @@ const Post = props => {
   const [dislikes, setDislikes] = useState(0);
   const [action, setAction] = useState(1);
   const [userLike, setUserLike] = useState([]);
+  const [display, setDisplay] = useState(false);
 
   const id = localStorage.getItem("id");
   const likesUrl = `http://localhost:5503/profilebook/likes/${props.data.Post_ID}`;
@@ -35,28 +38,32 @@ const Post = props => {
       });
   }, [action]);
 
-  console.log("userl;egvferwgferwgfeqr", userLike);
-
   const like = () => {
     const obj = {
       Like_User_ID: id,
       Like_Type: true
     };
     if (userLike.length === 0) {
-      axiosWithAuth().post(likesUrl, obj).then(x => setAction(action + 1))
-    }
-    else if(userLike[0].Like_Type === 0){
-      console.log("hola")
-      axiosWithAuth().delete(`http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`)
-      .then(() => {
-        axiosWithAuth().post(likesUrl, obj).then(() => setAction(action + 1))
-      })
-    }
-    
-    else {
-      
-      axiosWithAuth().delete(`http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`).then(() => setAction(action + 1))
-      
+      axiosWithAuth()
+        .post(likesUrl, obj)
+        .then(x => setAction(action + 1));
+    } else if (userLike[0].Like_Type === 0) {
+      console.log("hola");
+      axiosWithAuth()
+        .delete(
+          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+        )
+        .then(() => {
+          axiosWithAuth()
+            .post(likesUrl, obj)
+            .then(() => setAction(action + 1));
+        });
+    } else {
+      axiosWithAuth()
+        .delete(
+          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+        )
+        .then(() => setAction(action + 1));
     }
   };
 
@@ -66,22 +73,27 @@ const Post = props => {
       Like_Type: false
     };
     if (userLike.length === 0) {
-      axiosWithAuth().post(likesUrl, obj).then(x => setAction(action + 1))
+      axiosWithAuth()
+        .post(likesUrl, obj)
+        .then(x => setAction(action + 1));
+    } else if (userLike[0].Like_Type === 1) {
+      console.log("hola");
+      axiosWithAuth()
+        .delete(
+          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+        )
+        .then(() => {
+          axiosWithAuth()
+            .post(likesUrl, obj)
+            .then(() => setAction(action + 1));
+        });
+    } else {
+      axiosWithAuth()
+        .delete(
+          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+        )
+        .then(() => setAction(action + 1));
     }
-    else if(userLike[0].Like_Type === 1){
-      console.log("hola")
-      axiosWithAuth().delete(`http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`)
-      .then(() => {
-        axiosWithAuth().post(likesUrl, obj).then(() => setAction(action + 1))
-      })
-    }
-    
-    else {
-      
-      axiosWithAuth().delete(`http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`).then(() => setAction(action + 1))
-      
-    }
-    
   };
 
   const actions = [
@@ -101,30 +113,39 @@ const Post = props => {
       </Tooltip>
       <span className="comment-action">{dislikes}</span>
     </span>,
-    <span key="comment-basic-reply-to">Reply to</span>
+    <span onClick={() => setDisplay(!display)} key="comment-basic-reply-to">
+      Comments
+    </span>
+    /* <span onClick={() => setDisplay(!display)} key="comment-basic-reply-to">
+      Reply
+    </span> */
   ];
   const firstName = props.data.User_First_Name;
   const lastName = props.data.User_Last_Name;
 
   return (
-    <Comment
-      actions={actions}
-      author={
-        <a>
-          {firstName} {lastName}
-        </a>
-      }
-      content={<p>{props.data.Post_Text}</p>}
-      datetime={
-        <Tooltip
-          title={moment(props.data.Post_Created_At).format(
-            "YYYY-MM-DD HH:mm:ss"
-          )}
-        >
-          <span>{moment(moment(props.data.Post_Created_At)).fromNow()}</span>
-        </Tooltip>
-      }
-    />
+    <>
+      <Comment
+        actions={actions}
+        author={
+          <a>
+            {firstName} {lastName}
+          </a>
+        }
+        content={<p>{props.data.Post_Text}</p>}
+        datetime={
+          <Tooltip
+            title={moment(props.data.Post_Created_At).format(
+              "YYYY-MM-DD HH:mm:ss"
+            )}
+          >
+            <span>{moment(moment(props.data.Post_Created_At)).fromNow()}</span>
+          </Tooltip>
+        }
+      />
+      {display ? 
+      <div ><PostComments Post_ID={props.data.Post_ID} /></div> : null}
+    </>
   );
 };
 

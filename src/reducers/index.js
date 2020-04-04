@@ -1,5 +1,3 @@
-
-
 import {
   // register user
   REGISTER_USER_START,
@@ -9,13 +7,18 @@ import {
   SIGN_USER_START,
   SIGN_USER_SUCCESS,
   SIGN_USER_FAILURE,
-
+  // getting posts
   GET_All_POST_START,
   GET_All_POST_SUCCESS,
-  GET_All_POST_FAILURE
+  GET_All_POST_FAILURE,
+  //getting comments
+  GET_COMMENTS_START,
+  GET_COMMENTS_SUCCESS,
+  GET_COMMENTS_FAILURE
 } from "../actions";
 
 const initialState = {
+  comments : {},
   posts: [],
   user: {},
   isLoading: false,
@@ -63,25 +66,50 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
         isLoading: false
       };
-      case GET_All_POST_START:
-        return {
-          ...state,
-          error: null,
-          isLoading: true
-        };
-      case GET_All_POST_SUCCESS:
-        return {
-          ...state,
-          posts: action.payload,
-          isLoading: false,
-          error: null
-        };
-      case GET_All_POST_FAILURE:
-        return {
-          ...state,
-          error: action.payload,
-          isLoading: false
-        };
+    case GET_All_POST_START:
+      return {
+        ...state,
+        error: null,
+        isLoading: true
+      };
+    case GET_All_POST_SUCCESS:
+      return {
+        ...state,
+        posts: action.payload,
+        isLoading: false,
+        error: null
+      };
+    case GET_All_POST_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+    
+      // case GET_COMMENTS_START:
+      // return {
+      //   ...state,
+      //   error: null,
+      //   isLoading: true
+      // };
+      // case GET_COMMENTS_SUCCESS:
+        
+      //   return {
+      //     ...state,
+      //     comments : {
+      //       ...state.comments,
+            
+      //       [action.payload[0].Comment_Post_ID]:[action.payload]
+      //     },
+      //     isLoading: false,
+      //     error: null
+      //   };
+      //   case GET_COMMENTS_FAILURE:
+      //     return {
+      //       ...state,
+      //       error: action.payload,
+      //       isLoading: false
+      //     };
     default:
       return state;
   }

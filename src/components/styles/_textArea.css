@@ -1,0 +1,14 @@
+#textInput {
+  width: 20%;
+  height: 50px;
+  background-color: rgba(22, 22, 219, 0.036);
+  margin-left: 6%;
+  color: rgb(22, 48, 133);
+}
+/* #textAreaDiv {
+} */
+
+#textAreaDiv #loadingBTN {
+  width: 7%;
+  height: 50px;
+}

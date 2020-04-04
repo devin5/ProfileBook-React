@@ -1,0 +1,9 @@
+#spec .ant-comment-content {
+  padding: 0% 5%;
+  margin-left: 0%;
+  color: rgb(70, 70, 184);
+  font-size: 0.7rem;
+}
+#spec .ant-comment-inner {
+  padding-top: 0%;
+}

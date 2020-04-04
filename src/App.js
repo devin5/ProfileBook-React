@@ -20,19 +20,20 @@ function App() {
       <ProtectedRoute path="/profilebook">
         <Banner />
       </ProtectedRoute>
+      <div className="contain">
+        <Route exact path="/">
+          <DefaultHome />
+          <RegFooter />
+        </Route>
 
-      <Route exact path="/">
-        <DefaultHome />
-        <RegFooter />
-      </Route>
+        <ProtectedRoute exact path="/profilebook/timeline">
+          <TimeLine />
+        </ProtectedRoute>
 
-      <ProtectedRoute exact path="/profilebook/timeline">
-        <TimeLine />
-      </ProtectedRoute>
-
-      <ProtectedRoute exact path="/profilebook/profile">
-        <Test />
-      </ProtectedRoute>
+        <ProtectedRoute exact path="/profilebook/profile">
+          <Test />
+        </ProtectedRoute>
+      </div>
 
       <ProtectedRoute path="/profilebook">
         <PbFooter />

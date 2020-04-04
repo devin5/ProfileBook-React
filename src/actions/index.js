@@ -18,6 +18,10 @@ export const GET_All_POST_START = "GET_All_POST_START";
 export const GET_All_POST_SUCCESS = "GET_All_POST_SUCCES";
 export const GET_All_POST_FAILURE = "GET_All_POST_FAILURE";
 
+// export const GET_COMMENTS_START = "GET_COMMENTS_START";
+// export const GET_COMMENTS_SUCCESS = "GET_COMMENTS_SUCCESS";
+// export const GET_COMMENTS_FAILURE = "GET_COMMENTS_FAILURE";
+
 export const registerUser = (user, history) => {
   return dispatch => {
     dispatch({ type: REGISTER_USER_START });
@@ -64,3 +68,22 @@ export const getTimeLine = () => {
       });
   };
 };
+
+// export const getComments = id => {
+//   return dispatch => {
+//     dispatch({ type: GET_COMMENTS_START });
+//     axiosWithAuth()
+//       .get(`http://localhost:5503/profilebook/comments/${id}`)
+//       .then(res => {
+//         if(res.data.data.comments.length){
+//           dispatch({
+//             type: GET_COMMENTS_SUCCESS,
+//             payload: res.data.data.comments
+//           });
+//         }
+//       })
+//       .catch(err => {
+//         dispatch({ type: GET_COMMENTS_FAILURE, payload: err });
+//       });
+//   };
+// };

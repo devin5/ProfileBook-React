@@ -51,7 +51,7 @@ function Register({ registerUser, isLoading, error }) {
         validateMessages={validateMessages}
       >
         <Col span={12} offset={9}>
-          <h1>Regsiter New Account</h1>
+          <h1>Regisiter New Account</h1>
         </Col>
 
         <Form.Item

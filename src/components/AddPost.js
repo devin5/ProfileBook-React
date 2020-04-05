@@ -15,7 +15,7 @@ function AddPost({ setBool }) {
       ...form
     };
     axiosWithAuth()
-      .post(`http://localhost:5503/profilebook/posts/${id}`, commentObj)
+      .post(`https://profilebook3.herokuapp.com/profilebook/posts/${id}`, commentObj)
       .then(x => {
         setForm({});
         setBool(bool => !bool);

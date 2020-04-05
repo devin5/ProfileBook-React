@@ -15,7 +15,7 @@ const Co = ({ comment, setBool }) => {
   const deleteComment = () => {
     axiosWithAuth()
       .delete(
-        `http://localhost:5503/profilebook/comments/${comment.Comment_ID}`
+        `https://profilebook3.herokuapp.com/profilebook/comments/${comment.Comment_ID}`
       )
       .then(() => setBool(bool => !bool));
   };

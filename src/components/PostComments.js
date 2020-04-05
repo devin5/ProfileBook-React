@@ -10,7 +10,7 @@ export function PostComments({ Post_ID }) {
 
   useEffect(() => {
     axiosWithAuth()
-      .get(`http://localhost:5503/profilebook/comments/${Post_ID}`)
+      .get(`https://profilebook3.herokuapp.com/profilebook/comments/${Post_ID}`)
       .then(res => {
         setComments(res.data.data.comments);
         setLoaded(true);

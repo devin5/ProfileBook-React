@@ -1,10 +1,11 @@
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-const signEndPoint = "http://localhost:5503/profilebook/auth/users/login";
-const allPosts = "http://localhost:5503/profilebook/posts/";
+const URL = "https://profilebook3.herokuapp.com/"
+const signEndPoint = `${URL}profilebook/auth/users/login`;
+const allPosts = `${URL}profilebook/posts/`;
 const registerEndPoint =
-  "http://localhost:5503/profilebook/auth/users/register";
+  `${URL}profilebook/auth/users/register`;
 
 export const REGISTER_USER_START = "REGISTER_USER_START";
 export const REGISTER_USER_SUCCESS = "REGISTER_USER_SUCCESS";
@@ -76,7 +77,7 @@ export const getProfile = id => {
   return dispatch => {
     dispatch({ type: GET_All_PROFILE_START });
     axiosWithAuth()
-      .get(`http://localhost:5503/profilebook/posts/${id}`)
+      .get(`${URL}profilebook/posts/${id}`)
       .then(res => {
         dispatch({
           type: GET_All_PROFILE_SUCCESS,

@@ -22,7 +22,7 @@ function AddComment({Post_ID, setBool}) {
         ...form,
         Comment_User_ID:id
     }
-    axiosWithAuth().post(`http://localhost:5503/profilebook/comments/${Post_ID}`, commentObj)
+    axiosWithAuth().post(`https://profilebook3.herokuapp.com/profilebook/comments/${Post_ID}`, commentObj)
     .then(x => {
         console.log("success", x)
         setBool((bool) => !bool)

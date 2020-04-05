@@ -20,8 +20,8 @@ const Post = props => {
   const [display, setDisplay] = useState(false);
 
   const id = localStorage.getItem("id");
-  const likesUrl = `http://localhost:5503/profilebook/likes/${props.data.Post_ID}`;
-  const delUrl = `http://localhost:5503/profilebook/likes/${id}`;
+  const likesUrl = `https://profilebook3.herokuapp.com/profilebook/likes/${props.data.Post_ID}`;
+  const delUrl = `https://profilebook3.herokuapp.com/profilebook/likes/${id}`;
 
   useEffect(() => {
     axiosWithAuth()
@@ -42,7 +42,7 @@ const Post = props => {
 
   const deletePost = () => {
     axiosWithAuth()
-      .delete(`http://localhost:5503/profilebook/posts/${props.data.Post_ID}`)
+      .delete(`https://profilebook3.herokuapp.com/profilebook/posts/${props.data.Post_ID}`)
       .then(() => props.setBool(bool => !bool));
   };
   
@@ -61,7 +61,7 @@ const Post = props => {
      
       axiosWithAuth()
         .delete(
-          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+          `https://profilebook3.herokuapp.com/profilebook/likes/${userLike[0].Like_ID}`
         )
         .then(() => {
           axiosWithAuth()
@@ -72,7 +72,7 @@ const Post = props => {
      
       axiosWithAuth()
         .delete(
-          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+          `https://profilebook3.herokuapp.com/profilebook/likes/${userLike[0].Like_ID}`
         )
         .then(() => setAction(action + 1));
     }
@@ -91,7 +91,7 @@ const Post = props => {
       console.log("hola");
       axiosWithAuth()
         .delete(
-          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+          `https://profilebook3.herokuapp.com/profilebook/likes/${userLike[0].Like_ID}`
         )
         .then(() => {
           axiosWithAuth()
@@ -101,7 +101,7 @@ const Post = props => {
     } else {
       axiosWithAuth()
         .delete(
-          `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
+          `https://profilebook3.herokuapp.com/profilebook/likes/${userLike[0].Like_ID}`
         )
         .then(() => setAction(action + 1));
     }

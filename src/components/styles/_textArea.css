@@ -1,4 +1,5 @@
 #textInput {
+  margin-bottom: 20px;
   width: 20%;
   height: 50px;
   background-color: rgba(22, 22, 219, 0.036);
@@ -11,4 +12,5 @@
 #textAreaDiv #loadingBTN {
   width: 7%;
   height: 50px;
+  margin-bottom: 20px;
 }

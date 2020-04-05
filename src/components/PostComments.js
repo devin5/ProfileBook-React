@@ -21,19 +21,22 @@ export function PostComments({ Post_ID }) {
   }, [bool]);
 
   return (
-    <>
+    <div id="postComments">
+     
       {loaded && comments.length === 0 ? (
         <AddComment Post_ID={Post_ID} setBool={setBool} />
       ) : null}
+   
       {comments.map((item, index) => (
         <div id="transit">
-          <Comment comment={item} />
+          <Comment comment={item} setBool={setBool} />
 
           {index === comments.length - 1 ? (
             <AddComment Post_ID={Post_ID} setBool={setBool} />
           ) : null}
         </div>
       ))}
-    </>
+      
+    </div>
   );
 }

@@ -28,14 +28,14 @@ const Banner = () => {
               </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Link className="link" to="/">
+              <Link className="link" to="/profilebook/profile">
                 Profile
               </Link>
             </Menu.Item>
 
             <Menu.Item key="3">
               {" "}
-              <Link className="link" to="/">
+              <Link className="link" to="/test">
                 Test
               </Link>
             </Menu.Item>

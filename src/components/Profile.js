@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { getTimeLine } from "../actions/index";
+import { getProfile } from "../actions/index";
 import Post from "./Post";
 import AddPost from "./AddPost";
 
-const TimeLine = ({ getTimeLine, posts }) => {
+const Profile = ({ getProfile, profile }) => {
+  const id = localStorage.getItem("id");
   const [bool, setBool] = useState(false);
 
   useEffect(() => {
-    getTimeLine();
+    getProfile(id);
   }, [bool]);
 
   return (
     <div id="wrapper">
       <AddPost setBool={setBool} />
-      {posts.map(x => (
+      {profile.map(x => (
         <Post setBool={setBool} data={x} />
       ))}
     </div>
@@ -22,10 +23,10 @@ const TimeLine = ({ getTimeLine, posts }) => {
 };
 const mapStateToProps = state => {
   return {
-    posts: state.posts,
+    profile: state.profile,
     isLoading: state.isLoading,
     error: state.error
   };
 };
 
-export default connect(mapStateToProps, { getTimeLine })(TimeLine);
+export default connect(mapStateToProps, { getProfile })(Profile);

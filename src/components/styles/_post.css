@@ -14,3 +14,7 @@
 #spec .ant-comment-inner {
   padding-top: 0%;
 }
+
+#spec #postText {
+  font-size: 1.2rem;
+}

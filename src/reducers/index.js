@@ -14,12 +14,17 @@ import {
   //getting comments
   GET_COMMENTS_START,
   GET_COMMENTS_SUCCESS,
-  GET_COMMENTS_FAILURE
+  GET_COMMENTS_FAILURE,
+
+  GET_All_PROFILE_START,
+  GET_All_PROFILE_SUCCESS,
+  GET_All_PROFILE_FAILURE,
 } from "../actions";
 
 const initialState = {
   comments : {},
   posts: [],
+  profile: [],
   user: {},
   isLoading: false,
   error: null
@@ -85,6 +90,26 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
         isLoading: false
       };
+
+      case GET_All_PROFILE_START:
+        return {
+          ...state,
+          error: null,
+          isLoading: true
+        };
+      case GET_All_PROFILE_SUCCESS:
+        return {
+          ...state,
+          profile: action.payload,
+          isLoading: false,
+          error: null
+        };
+      case GET_All_PROFILE_FAILURE:
+        return {
+          ...state,
+          error: action.payload,
+          isLoading: false
+        };
     
       // case GET_COMMENTS_START:
       // return {

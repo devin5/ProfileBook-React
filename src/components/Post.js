@@ -3,7 +3,8 @@ import { Comment, Tooltip, Avatar } from "antd";
 import moment from "moment";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { PostComments } from "./PostComments";
-
+import { CloseCircleOutlined } from "@ant-design/icons";
+import "./styles/_post.css";
 import {
   DislikeOutlined,
   LikeOutlined,
@@ -34,21 +35,30 @@ const Post = props => {
         });
         setLikes(likeArr.length);
         setDislikes(dislikeArr.length);
-        setUserLike(res.data.filter(x => x.Like_User_ID !== id));
+        setUserLike(res.data.filter(x => x.Like_User_ID.toString() === id));
       });
+      
   }, [action]);
 
+  const deletePost = () => {
+    axiosWithAuth()
+      .delete(`http://localhost:5503/profilebook/posts/${props.data.Post_ID}`)
+      .then(() => props.setBool(bool => !bool));
+  };
+  
   const like = () => {
+    console.log("user lile", userLike)
     const obj = {
       Like_User_ID: id,
       Like_Type: true
     };
+    
     if (userLike.length === 0) {
       axiosWithAuth()
         .post(likesUrl, obj)
         .then(x => setAction(action + 1));
     } else if (userLike[0].Like_Type === 0) {
-      console.log("hola");
+     
       axiosWithAuth()
         .delete(
           `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
@@ -59,6 +69,7 @@ const Post = props => {
             .then(() => setAction(action + 1));
         });
     } else {
+     
       axiosWithAuth()
         .delete(
           `http://localhost:5503/profilebook/likes/${userLike[0].Like_ID}`
@@ -124,28 +135,60 @@ const Post = props => {
   const lastName = props.data.User_Last_Name;
 
   return (
-    <>
-      <Comment
-        actions={actions}
-        author={
-          <a>
-            {firstName} {lastName}
-          </a>
-        }
-        content={<p>{props.data.Post_Text}</p>}
-        datetime={
-          <Tooltip
-            title={moment(props.data.Post_Created_At).format(
-              "YYYY-MM-DD HH:mm:ss"
-            )}
-          >
-            <span>{moment(moment(props.data.Post_Created_At)).fromNow()}</span>
-          </Tooltip>
-        }
-      />
-      {display ? 
-      <div ><PostComments Post_ID={props.data.Post_ID} /></div> : null}
-    </>
+    <div id="spec">
+      {props.data.User_ID.toString() === id ? (
+        <Comment
+          actions={actions}
+          author={
+            <a>
+              {firstName} {lastName}
+            </a>
+          }
+          content={<p id="postText">{props.data.Post_Text}</p>}
+          datetime={
+            <Tooltip
+              title={moment(props.data.Post_Created_At).format(
+                "YYYY-MM-DD HH:mm:ss"
+              )}
+            >
+              <span>
+                {moment(moment(props.data.Post_Created_At)).fromNow()}
+              </span>
+              <span>
+                <CloseCircleOutlined onClick={deletePost} id="icon" />
+              </span>
+            </Tooltip>
+          }
+        />
+      ) : (
+        <Comment
+          actions={actions}
+          author={
+            <a>
+              {firstName} {lastName}
+            </a>
+          }
+          content={<p id="postText">{props.data.Post_Text}</p>}
+          datetime={
+            <Tooltip
+              title={moment(props.data.Post_Created_At).format(
+                "YYYY-MM-DD HH:mm:ss"
+              )}
+            >
+              <span>
+                {moment(moment(props.data.Post_Created_At)).fromNow()}
+              </span>
+            </Tooltip>
+          }
+        />
+      )}
+
+      {display ? (
+        <div>
+          <PostComments Post_ID={props.data.Post_ID} />
+        </div>
+      ) : null}
+    </div>
   );
 };
 

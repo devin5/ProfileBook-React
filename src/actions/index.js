@@ -18,6 +18,10 @@ export const GET_All_POST_START = "GET_All_POST_START";
 export const GET_All_POST_SUCCESS = "GET_All_POST_SUCCES";
 export const GET_All_POST_FAILURE = "GET_All_POST_FAILURE";
 
+export const GET_All_PROFILE_START = "GET_All_PROFILE_START";
+export const GET_All_PROFILE_SUCCESS = "GET_All_PROFILE_SUCCES";
+export const GET_All_PROFILE_FAILURE = "GET_All_PROFILE_FAILURE";
+
 // export const GET_COMMENTS_START = "GET_COMMENTS_START";
 // export const GET_COMMENTS_SUCCESS = "GET_COMMENTS_SUCCESS";
 // export const GET_COMMENTS_FAILURE = "GET_COMMENTS_FAILURE";
@@ -65,6 +69,23 @@ export const getTimeLine = () => {
       })
       .catch(err => {
         dispatch({ type: GET_All_POST_FAILURE, payload: err });
+      });
+  };
+};
+export const getProfile = id => {
+  return dispatch => {
+    dispatch({ type: GET_All_PROFILE_START });
+    axiosWithAuth()
+      .get(`http://localhost:5503/profilebook/posts/${id}`)
+      .then(res => {
+        dispatch({
+          type: GET_All_PROFILE_SUCCESS,
+          payload: res.data.data.posts
+        });
+        // console.log("where is my profile", res);
+      })
+      .catch(err => {
+        dispatch({ type: GET_All_PROFILE_FAILURE, payload: err });
       });
   };
 };
